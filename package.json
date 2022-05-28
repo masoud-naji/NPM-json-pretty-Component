@@ -1,0 +1,71 @@
+{
+  "name": "json-pretty-textarea",
+  "version": "1.1.4",
+  "description": "JSON pretty Component , can use directly on React projects to show your json in textarea component with controlling font size and color of everything",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "build-lib": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/masoud-naji/NPM-json-pretty-Component.git"
+  },
+  "keywords": [
+    "JSON",
+    "pretty",
+    "pretty-json",
+    "json-pretty",
+    "json-pretty-textarea",
+    "json-pretty-component",
+    "json-pretty-react",
+    "json-pretty-react-component",
+    "json-pretty-react-textarea",
+    "json-pretty-react-component-textarea",
+    "json Pretty",
+    "JSON Pretty",
+    "json pretty Component",
+    "JSON pretty Component",
+    "JSON pretty Textarea",
+    "json pretty Textarea",
+    "json pretty textarea"
+  ],
+  "author": "Masoud Naji",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/masoud-naji/NPM-json-pretty-Component/issues"
+  },
+  "homepage": "https://github.com/masoud-naji/NPM-json-pretty-Component#readme",
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@storybook/addon-actions": "^6.5.5",
+    "@storybook/addon-essentials": "^6.5.5",
+    "@storybook/addon-interactions": "^6.5.5",
+    "@storybook/addon-links": "^6.5.5",
+    "@storybook/builder-webpack4": "^6.5.5",
+    "@storybook/manager-webpack4": "^6.5.5",
+    "@storybook/react": "^6.5.5",
+    "@storybook/testing-library": "^0.0.11",
+    "babel-loader": "^8.2.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "rollup": "^2.74.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^3.1.8"
+  },
+  "peerDependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "dependencies": {
+    "rollup-plugin-local-resolve": "^1.0.7",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
