@@ -49,7 +49,6 @@ function UseJsonPrettier({
     key_font_sizeN: `1rem`
   });
   React.useEffect(() => {
-    console.log("befor", styles);
     setSpanStyle({ ...spanStyles,
       stringClN: `${stringCl}!important`,
       numberClN: `${numberCl}!important`,
@@ -71,7 +70,6 @@ function UseJsonPrettier({
       borderRadius: `${borderRadius}`
     });
   }, [preBcl, stringCl, numberCl, booleanCl, nullCl, keyCl, string_font_size, number_font_size, boolean_font_size, null_font_size, key_font_size, height, width]);
-  console.log("after", styles);
 
   function syntaxHighlight(json) {
     json = json.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

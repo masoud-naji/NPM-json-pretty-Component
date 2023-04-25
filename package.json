@@ -1,6 +1,6 @@
 {
   "name": "json-pretty-textarea",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "JSON pretty Component , can use directly on React projects to show your json in textarea component with controlling font size and color of everything",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

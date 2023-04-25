@@ -42,7 +42,6 @@ function UseJsonPrettier({
   });
 
   useEffect(() => {
-    console.log("befor", styles);
     setSpanStyle({
       ...spanStyles,
       stringClN: `${stringCl}!important`,
@@ -80,7 +79,6 @@ function UseJsonPrettier({
     height,
     width,
   ]);
-  console.log("after", styles);
   function syntaxHighlight(json) {
     json = json
       .replace(/&/g, "&amp;")
