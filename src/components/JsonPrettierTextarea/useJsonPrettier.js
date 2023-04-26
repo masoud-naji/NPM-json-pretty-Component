@@ -149,7 +149,7 @@ function UseJsonPrettier({
   }
   let str = JSON.stringify(prettyjson, undefined, 4);
   return (
-    <pre
+    <div
       style={{
         backgroundColor: `${styles.backgroundColor}`,
         height: `${styles.height}`,
@@ -157,6 +157,7 @@ function UseJsonPrettier({
         width: `${styles.width}`,
         maxWidth: `${styles.maxWidth}`,
         borderRadius: `${styles.borderRadius}`,
+        whiteSpace: "pre-wrap",
       }}
       dangerouslySetInnerHTML={{ __html: syntaxHighlight(str) }}
     />

@@ -49,7 +49,8 @@ function UseJsonPrettier({
     key_font_sizeN: `1rem`
   });
   React.useEffect(() => {
-    setSpanStyle({ ...spanStyles,
+    setSpanStyle({
+      ...spanStyles,
       stringClN: `${stringCl}!important`,
       numberClN: `${numberCl}!important`,
       booleanClN: `${booleanCl}!important`,
@@ -61,7 +62,8 @@ function UseJsonPrettier({
       null_font_sizeN: `${null_font_size}!important`,
       key_font_sizeN: `${key_font_size}!important`
     });
-    setStyle({ ...styles,
+    setStyle({
+      ...styles,
       backgroundColor: `${preBcl}`,
       height: `${height}`,
       maxHeight: `${height}`,
@@ -70,12 +72,10 @@ function UseJsonPrettier({
       borderRadius: `${borderRadius}`
     });
   }, [preBcl, stringCl, numberCl, booleanCl, nullCl, keyCl, string_font_size, number_font_size, boolean_font_size, null_font_size, key_font_size, height, width]);
-
   function syntaxHighlight(json) {
     json = json.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
       var cls = "number";
-
       if (/^"/.test(match)) {
         if (/:$/.test(match)) {
           cls = "key";
@@ -87,35 +87,30 @@ function UseJsonPrettier({
       } else if (/null/.test(match)) {
         cls = "null";
       }
-
       switch (cls) {
         case "key":
           return `<span  style="color:${spanStyles.keyClN}; font-size: ${spanStyles.key_font_sizeN}" class="` + cls + `">` + match + `</span>`;
-
         case "string":
           return `<span  style="color:${spanStyles.stringClN}; font-size: ${spanStyles.string_font_sizeN}" class="` + cls + `">` + match + `</span>`;
-
         case "number":
           return `<span  style="color:${spanStyles.numberClN}; font-size: ${spanStyles.number_font_sizeN}" class="` + cls + `">` + match + `</span>`;
-
         case "boolean":
           return `<span  style="color:${spanStyles.booleanClN}; font-size: ${spanStyles.boolean_font_sizeN}" class="` + cls + `">` + match + `</span>`;
-
         case "null":
           return `<span  style="color:${spanStyles.nullClN}; font-size: ${spanStyles.null_font_sizeN}" class="` + cls + `">` + match + `</span>`;
       }
     });
   }
-
   let str = JSON.stringify(prettyjson, undefined, 4);
-  return /*#__PURE__*/React__default["default"].createElement("pre", {
+  return /*#__PURE__*/React__default["default"].createElement("div", {
     style: {
       backgroundColor: `${styles.backgroundColor}`,
       height: `${styles.height}`,
       maxHeight: `${styles.maxHeight}`,
       width: `${styles.width}`,
       maxWidth: `${styles.maxWidth}`,
-      borderRadius: `${styles.borderRadius}`
+      borderRadius: `${styles.borderRadius}`,
+      whiteSpace: "pre-wrap"
     },
     dangerouslySetInnerHTML: {
       __html: syntaxHighlight(str)
